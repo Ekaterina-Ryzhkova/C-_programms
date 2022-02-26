@@ -1,0 +1,38 @@
+using System;
+
+namespace one
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] array = new int[] {2,5,3,4,6,1};
+            Test1(array);
+        }
+        public static void Test1(int[] array)
+        {
+            
+
+            int max1 = array[0];
+            int max2 = array[1];
+
+            for (int i = 2; i < array.Length; i++)
+            {
+                if (max1 < array[i])
+                {
+                    max1 = array[i];
+                }
+            }
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if ((max2 < array[i]) && (array[i] != max1))
+                {
+                    max2 = array[i];            
+                }
+            }  
+
+            Console.WriteLine($"В массиве два наибольших элемента - {max1} и {max2}");
+        }
+    }
+}
