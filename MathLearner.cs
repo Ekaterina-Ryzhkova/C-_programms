@@ -6,9 +6,9 @@ class Program
         public static void Main()
         {
             Console.Write("Введите a: ");
-            int a = int.Parse(Console.ReadLine(),CultureInfo.InvariantCulture);
+            int a = int.Parse(Console.ReadLine()); 
             Console.Write("Введите b: ");
-            int b = int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            int b = int.Parse(Console.ReadLine());
             Console.WriteLine("Бассейн который заполняется через обе трубы наполнится за " + Calculate(a, b) +" часов");
         }
 
