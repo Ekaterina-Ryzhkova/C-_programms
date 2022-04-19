@@ -61,3 +61,49 @@
             return ((x-c)/2) + c;
         }
     }
+
+// 3 Задача на совместную работу
+// Двое рабочих работая совместно выполняют работу за c дней. За сколько дней работая отдельно выполнит эту работу первый рабочий если он за a дня выполняет
+// такую же работу какую второй за b дня?
+// Программа составлена с учетом выбора рабочего, чтобы решение было универсальным для любого подобного типа задач.
+
+class Program
+    {
+        public static void Main()
+        {
+            Console.Write("Введите время за которое была выполнена работа двумя рабочими: ");
+            int c = int.Parse(Console.ReadLine());
+            Console.Write("Введите какую часть работы выполняет первый рабочий какую выполняет второй рабочий: ");
+            int a = int.Parse(Console.ReadLine());
+            Console.Write("Введите какую часть работы выполняет второй рабочий какую выполняет первый рабочий: ");
+            int b = int.Parse(Console.ReadLine());
+            Console.Write("Время выполнения какого рабочего необходимо найти (1 - Первого, 2 - Второго): ");
+            string k = Console.ReadLine();
+
+            if (k == "1")
+            {
+                Console.WriteLine("Первый рабочий выполнит работу за " + Calculate1(c, a, b) +" дня");
+            }
+
+            else if (k == "2")
+            {
+                Console.WriteLine("Второй рабочий выполнит работу за " + Calculate2(c, a, b) + " дня");
+            }
+
+            else 
+            {
+                Console.WriteLine("Введите корректное значение!");
+            }
+            
+        }
+
+        public static double Calculate1 (int c, int a, int b)
+        {
+            return (c*(a+b)/b);
+        }
+
+        public static double Calculate2(int c, int a, int b)
+        {
+            return (c * (a + b) / a);
+        }
+    }
